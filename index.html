@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coba Coba</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      color: white;
+      background:
+        radial-gradient(circle at top left, #6c2cff55, transparent 35%),
+        radial-gradient(circle at bottom right, #00e5ff44, transparent 35%),
+        #080812;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      width: 90%;
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 15px 25px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #9b5cff, #00e5ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      animation: muncul 1s ease;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: rgba(0,229,255,0.1);
+      border: 1px solid #00e5ff55;
+      color: #00e5ff;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #9b5cff, #00e5ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+
+      background: linear-gradient(90deg, #7b2cff, #00cfff);
+      box-shadow: 0 0 30px #6c2cff55;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 0 45px #00e5ff77;
+    }
+
+    /* Cards */
+    .cards {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 25px;
+
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(15px);
+
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #00e5ff66;
+      box-shadow: 0 15px 40px #00000055;
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #999;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+    }
+
+    /* Animasi */
+    @keyframes muncul {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Bulatan dekorasi */
+    .circle {
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: #7b2cff22;
+      filter: blur(60px);
+      z-index: -1;
+      animation: bergerak 8s infinite alternate ease-in-out;
+    }
+
+    .circle.one {
+      top: 10%;
+      left: -100px;
+    }
+
+    .circle.two {
+      bottom: 0;
+      right: -100px;
+      background: #00e5ff22;
+      animation-delay: 2s;
+    }
+
+    @keyframes bergerak {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(80px, 50px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+
+  <nav>
+    <div class="logo">Barzz</div>
+
+    <div>
+      <a href="#">Home</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="badge">✨ Welcome to my website</div>
+
+      <h1>
+        Buat sesuatu yang
+        <span>luar biasa.</span>
+      </h1>
+
+      <p>
+        Website modern dengan desain futuristik,
+        animasi smooth, dan tampilan yang responsif
+        untuk semua perangkat.
+      </p>
+
+      <a href="#fitur" class="btn">Mulai Sekarang 🚀</a>
+
+    </div>
+  </section>
+
+  <section class="cards" id="fitur">
+
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h2>Cepat</h2>
+      <p>
+        Dibuat ringan dan responsif sehingga
+        nyaman digunakan di berbagai perangkat.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h2>Modern</h2>
+      <p>
+        Menggunakan gradient, glassmorphism,
+        shadow, dan animasi yang menarik.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📱</div>
+      <h2>Responsive</h2>
+      <p>
+        Tampilan otomatis menyesuaikan ukuran
+        layar HP, tablet, maupun komputer.
+      </p>
+    </div>
+
+  </section>
+
+  <footer id="about">
+    © 2026 Rawr — Made with App
+  </footer>
+
+</body>
+</html>
